@@ -10,7 +10,7 @@ export function Editor ({typedData, setTypedData}: EditorProps) {
             <div className="w-full header p-3">
                 <p className="text-gray-300 text-center uppercase tracking-wider">Editor</p>
             </div>
-            <textarea className="w-full flex-1 overflow-y-scroll box-border body text-gray-300 p-6 resize-none outline-none" onChange={(e) => setTypedData(e.target.value)} value={typedData}></textarea>
+            <textarea className="w-full flex-1 overflow-y-auto box-border body text-gray-300 p-6 resize-none outline-none" onChange={(e) => setTypedData(e.target.value)} value={typedData}></textarea>
         </section>
     )
 }

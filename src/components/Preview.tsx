@@ -14,25 +14,23 @@ export function Preview({ typedData }: PreviewProps) {
           if (result instanceof Promise) {
             try {
               const html = await result;
-              console.log(html);
               setParsedData(dompurify.sanitize(html));
             } catch (error) {
               console.error('Error rendering markdown:', error);
             }
           } else {
             setParsedData(result);
-            console.log(result);
           }
         };
     
         parseMarkdown();
       }, [typedData]); 
     return (
-        <section className="w-full h-full body">
+        <section className="w-full flex flex-col h-full body">
             <div className="w-full header p-3">
                 <p className="text-gray-300 text-center tracking-wider uppercase">Preview</p>
             </div>
-            <div className="w-full prose-headings:underline prose-a:text-pink-500 prose prose-invert flex-1 overflow-y-scroll box-border body text-gray-300 p-6 resize-none outline-none" dangerouslySetInnerHTML={{ __html: parsedData }} />
+            <div className="w-full prose-headings:underline prose-a:text-pink-500 prose prose-invert flex-1 overflow-y-auto body text-gray-300 p-6 " dangerouslySetInnerHTML={{ __html: parsedData }} />
         </section>
     )
 }
