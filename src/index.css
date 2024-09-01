@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header{
+  @apply bg-gray-900
+}
+
+.body{
+  @apply bg-sky-950
+}
